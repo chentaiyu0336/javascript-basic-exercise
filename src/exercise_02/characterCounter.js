@@ -6,5 +6,18 @@ export default function countCharacter(string, prediction) {
   // * Please implement this function and pass all the tests in character_counter_spec.js.
   // * Please do NOT modify the signature of the function.
 
-  throw new Error('Please delete this line and implement the function');
+  // eslint-disable-next-line no-empty
+  let len = 0;
+  if (string != null) {
+    if (prediction == null) {
+      len = string.length;
+    } else {
+      for (let i = 0; i < string.length; i += 1) {
+        if (prediction(string[i])) {
+          len += 1;
+        }
+      }
+    }
+  }
+  return len;
 }
